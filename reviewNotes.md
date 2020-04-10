@@ -25,4 +25,22 @@ JS Review -
 
 # Install nodemon
 
+Nodemon is just a package to restart our application everytime we make changes so we don't have to manually do it.
 - run `npm install --save-dev nodemon`
+
+# Setup KnexJS 
+
+- We need to install `knex` and `pg`
+- run `npm install knex pg`
+- KnexJS is a SQL query builder. It lets us build SQL with Javascript
+- PG is a PostgreSQL Database Client. A database is a server it needs a client to speak to it, the pg package does that.
+- Make sure you initialize a knexfile to hold all database config
+- run `knex init`
+
+# Creating Migration
+
+- run the command `knex migrate:make <migration_name>` to create a new migration file
+- the `up` function should contain code to create a change to the database
+- the `down` function should undo the `up` function
+- to run a migration use the command `knex migrate:latest`
+
