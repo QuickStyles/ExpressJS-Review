@@ -12,6 +12,12 @@ router.post('/login', (req, res) => {
   res.send(`you've posted to /login`)
 })
 
+// When a user DELETE "/session"
+router.delete('/session', (req, res) => {
+  res.clearCookie('user') // res.clearCookie will tell the browser to remove a cookie from it's store
+  res.send('logged out')
+})
+
 module.exports = router
 
 // router is like a sub-app in your express application

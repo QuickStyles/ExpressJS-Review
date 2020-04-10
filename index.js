@@ -1,5 +1,7 @@
 const express = require('express') // this loads the express library into this file
 const cookieParser = require('cookie-parser')
+// const bodyParser = require('body-parser') // old middleware should use express.urlencoded
+const methodOverride = require('method-override')
 
 // importing all my sub routers
 const sessionsRouter = require('./routes/sessions')
@@ -11,6 +13,13 @@ app.set('view engine', 'ejs') // tell express whenever we render a view it shoul
 app.set('views', 'templates') // tell express our view templates sit in a directory called "templates". By default express will think the views are inside a directory called "views" (this is convention too)
 
 // Middleware 
+app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride((req, res) => {
+  if (req.body && req.body._method) {
+    return req.body._method
+  }
+}))
+
 app.use(cookieParser()) // cookie parser is a middleware to format the cookies coming into your server in a nice javascript object. it will add it to req.cookies
 
 app.use('/', sessionsRouter) // mounts the sessionRouter 

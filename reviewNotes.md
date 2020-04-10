@@ -50,7 +50,10 @@ Nodemon is just a package to restart our application everytime we make changes s
 1) Setup templating using EJS https://ejs.co/
 - install EJS by runing `npm install ejs`
 - setup EJS & setup Express's view engine
-
+- install body parser middleware `npm install body-parser`
+- body parser will parse form inputs from a POST request and turn it into a really nice object attatched to req.body
+- install methodoverride middleware `npm install method-override`
+- method override will look for a input on every POST request called _method. If this input is available it will replace the current HTTP Verb with the value of that input
 # CRUD BlogPosts
 
 
