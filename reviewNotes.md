@@ -25,6 +25,8 @@ JS Review -
 
 # Install nodemon
 
+Note:  npm i --save package_name || npm i package_name || npm install package_name. are all the same
+only npm i --save-dev <package_name> needs the "--save-dev" flag
 Nodemon is just a package to restart our application everytime we make changes so we don't have to manually do it.
 - run `npm install --save-dev nodemon`
 
@@ -44,3 +46,13 @@ Nodemon is just a package to restart our application everytime we make changes s
 - the `down` function should undo the `up` function
 - to run a migration use the command `knex migrate:latest`
 
+# User Sign In Page (User Authentication)
+1) Setup templating using EJS https://ejs.co/
+- install EJS by runing `npm install ejs`
+- setup EJS & setup Express's view engine
+
+# CRUD BlogPosts
+
+
+
+# 
