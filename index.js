@@ -5,6 +5,7 @@ const methodOverride = require('method-override')
 
 // importing all my sub routers
 const sessionsRouter = require('./routes/sessions')
+const usersRouter = require('./routes/users')
 
 const app = express()
 
@@ -22,7 +23,9 @@ app.use(methodOverride((req, res) => {
 
 app.use(cookieParser()) // cookie parser is a middleware to format the cookies coming into your server in a nice javascript object. it will add it to req.cookies
 
-app.use('/', sessionsRouter) // mounts the sessionRouter 
+app.use('/', sessionsRouter) // mounts the sessionRouter
+app.use('/users', usersRouter) // mount the usersRouter
+// app.use('/blogposts' blogpostsRouter)
 
 // GET "/"
 app.get('/', (req, res) => {

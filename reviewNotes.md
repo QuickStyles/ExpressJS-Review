@@ -54,8 +54,19 @@ Nodemon is just a package to restart our application everytime we make changes s
 - body parser will parse form inputs from a POST request and turn it into a really nice object attatched to req.body
 - install methodoverride middleware `npm install method-override`
 - method override will look for a input on every POST request called _method. If this input is available it will replace the current HTTP Verb with the value of that input
-# CRUD BlogPosts
 
+# CRUD Users
+Create
+- A Form to create Users -> GET "users/new"
+- A RequestHandler to save a User in the database -> POST "/users"
+Read
+- A View to list ALL users -> GET "/users"
+- A View to show an individual user -> GET "/users/:id"
+Update
+- A View to show current user -> GET "/users/:id/edit"
+- A RequestHandler to update a user -> PATCH "/users/:id"
+Destroy
+- A RequestHandler to delete a user -> DELETE "/users/:id"
 
+# static assets
 
-# 
